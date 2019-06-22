@@ -1,3 +1,10 @@
+/* 
+This is a Lamda Function for balidating the Access Token from Cognito and generating an KILT idendity if thre is no existing
+This Function is executed by the API Endpoint Service, but only if the authorization by Cognito was successfull
+Steps:
+- The Function trys to recieve the Secrets from the Secrets Manager
+- If there is currently no idendity saved, a new one will be created and will be stored in the Secrets Manager (Will be replaced by KMS)
+*/
 var AWS = require('aws-sdk');
 //import Kilt from '@kiltprotocol/sdk-js';
 var Kilt = require('@kiltprotocol/sdk-js');

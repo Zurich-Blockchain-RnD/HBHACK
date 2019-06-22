@@ -1,3 +1,12 @@
+/* 
+This is a Lamda Function for Claiming an CTYPE
+Some Parameters are hard coded for testing
+Steps:
+- The mnemonic is fetched from the Secrets Manager of AWS based of the JWT Token from the Authentification Process from Cognito (will be replaced by the KMS for more security)
+- A Claim will be generated
+- The Claim is used to generated an encryped Message witch is send to the KILT Messaging Service (will be replaced by the SQS Service)
+- The Function returns the Claim to the API User
+*/
 var AWS = require('aws-sdk');
 var Kilt = require('@kiltprotocol/sdk-js');
 var axios = require('axios');
@@ -8,9 +17,9 @@ exports.handler = (event, context, callback) => {
 
 
     getSecret(event, (secret) => {
-        const data = JSON.parse(event.body);
-        const ctype = data.ctype;
-        console.log('CTYPE', ctype);
+        // const data = JSON.parse(event.body);
+        // const ctype = data.ctype;
+        // console.log('CTYPE', ctype);
 
         const rawClaim = {
             over_eighteen: true,
@@ -52,7 +61,7 @@ exports.handler = (event, context, callback) => {
                     headers: {
                         "Access-Control-Allow-Origin": "*"
                     },
-                    body: JSON.stringify({ ctype }),
+                    body: JSON.stringify({ claim }),
                 };
                 callback(null, response);
             });
