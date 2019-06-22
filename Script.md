@@ -51,4 +51,6 @@ Sales person: Ok, send me your financial credential and your licence so I can se
 
 - Student sends credentials
 
-Sales person: Hmm, because of your scholarship your financial standing allows you to lease a Lambo!
+Sales person: Hmm, because of your scholarship your financial standing allows you to lease a When Lambo!
+
+Student: What the heck is that??
