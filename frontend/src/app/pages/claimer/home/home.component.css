@@ -1,0 +1,19 @@
+.verified{
+  background-color: limegreen;
+}
+
+.not-verified{
+  background-color: orange;
+}
+
+.icons{
+  margin-top: 40px;
+}
+
+.icon{
+  margin-left: 10px;
+}
+
+.icons a {
+  color: black;
+}
