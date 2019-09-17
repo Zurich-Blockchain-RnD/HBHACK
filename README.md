@@ -22,4 +22,4 @@ What we do?
 
 # Q&A
 
-Where is data stored
+Where is data stored.
